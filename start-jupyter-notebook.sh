@@ -4,6 +4,12 @@
 : ${JUPYTERPORT_BASE_DIR:=/data}
 : ${JUPYTERPORT_SAVE_PATH:=/data/save}
 : ${JUPYTER_BASE_URL:=/}
+: ${JUPYTERPORT_PAUSE_CMD:=false}
+
+if [[ ${JUPYTERPORT_PAUSE_CMD} == "true" ]];then
+  echo ">> Pause container using: tail -f /dev/null"
+  tail -f /dev/null
+fi
 
 OPTS=""
 if [[ "X${JUPYTER_API_TOKEN}" != "X" ]];then
