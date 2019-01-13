@@ -8,7 +8,7 @@ FROM ${DOCKER_REGISTRY}/${FROM_IMG_REPO}/${FROM_IMG_NAME}:${FROM_IMG_TAG}${DOCKE
 
 ENV DEBIAN_FRONTEND=noninteractive \
     DEBCONF_NONINTERACTIVE_SEEN=true
-RUN pip3 install jupyter
+RUN pip3 install jupyter pandas
 COPY start-jupyter-notebook.sh /usr/local/bin/
 COPY etc/jupyter_notebook_config.py /etc/jupyter/jupyter_notebook_config.py
 CMD ["start-jupyter-notebook.sh"]
