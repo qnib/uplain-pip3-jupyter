@@ -16,7 +16,9 @@ cd ${JUPYTER_NOTEBOOK_DIR}
 jupyter --paths
 echo "jupyter notebook --ip=0.0.0.0 --allow-root ${OPTS} \\"
 echo "                 --notebook-dir=${JUPYTER_NOTEBOOK_DIR} \\"
-echo "                 --NotebookApp.base_url=${JUPYTER_BASE_URL}"
+echo "                 --NotebookApp.base_url=${JUPYTER_BASE_URL} \\"
+echo "                 --config=/etc/jupyter/jupyter_notebook_config.py"
 jupyter notebook --ip=0.0.0.0 --allow-root ${OPTS} \
                  --notebook-dir=${JUPYTER_NOTEBOOK_DIR} \
-                 --NotebookApp.base_url=${JUPYTER_BASE_URL}
+                 --NotebookApp.base_url=${JUPYTER_BASE_URL} \
+                 --config=/etc/jupyter/jupyter_notebook_config.py
