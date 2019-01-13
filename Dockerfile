@@ -10,4 +10,5 @@ ENV DEBIAN_FRONTEND=noninteractive \
     DEBCONF_NONINTERACTIVE_SEEN=true
 RUN pip3 install jupyter
 COPY start-jupyter-notebook.sh /usr/local/bin/
+COPY etc/jupyter_notebook_config.py /etc/jupyter/jupyter_notebook_config.py
 CMD ["start-jupyter-notebook.sh"]
