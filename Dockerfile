@@ -7,7 +7,10 @@ ARG FROM_IMG_HASH=""
 FROM ${DOCKER_REGISTRY}/${FROM_IMG_REPO}/${FROM_IMG_NAME}:${FROM_IMG_TAG}${DOCKER_IMG_HASH}
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    DEBCONF_NONINTERACTIVE_SEEN=true
+    DEBCONF_NONINTERACTIVE_SEEN=true \
+    JUPYTER_RUNTIME_DIR=/jupyter \
+    JUPYTER_CONFIG_DIR=/etc/jupyter \
+    JUPYTER_PATH=/data/
 RUN pip3 install jupyter pandas
 COPY start-jupyter-notebook.sh /usr/local/bin/
 COPY etc/jupyter_notebook_config.py /etc/jupyter/jupyter_notebook_config.py
