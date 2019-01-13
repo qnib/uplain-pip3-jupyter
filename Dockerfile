@@ -11,6 +11,8 @@ ENV DEBIAN_FRONTEND=noninteractive \
     JUPYTER_RUNTIME_DIR=/jupyter \
     JUPYTER_CONFIG_DIR=/etc/jupyter \
     JUPYTER_PATH=/data/
+    XDG_RUNTIME_DIR=/jupyter/
+    XDG_DATA_HOME=/data
 RUN pip3 install jupyter pandas
 COPY start-jupyter-notebook.sh /usr/local/bin/
 COPY etc/jupyter_notebook_config.py /etc/jupyter/jupyter_notebook_config.py
