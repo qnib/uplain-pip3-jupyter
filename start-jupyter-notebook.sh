@@ -13,6 +13,7 @@ XDG_RUNTIME_DIR=""
 
 echo "> cd ${JUPYTER_NOTEBOOK_DIR}"
 cd ${JUPYTER_NOTEBOOK_DIR}
+jupyter --paths
 echo "jupyter notebook --ip=0.0.0.0 --allow-root ${OPTS} \\"
 echo "                 --notebook-dir=${JUPYTER_NOTEBOOK_DIR} \\"
 echo "                 --NotebookApp.base_url=${JUPYTER_BASE_URL}"
