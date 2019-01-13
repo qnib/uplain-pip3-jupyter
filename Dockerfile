@@ -13,7 +13,7 @@ ENV DEBIAN_FRONTEND=noninteractive \
     JUPYTER_PATH=/data/ \
     XDG_RUNTIME_DIR=/jupyter/ \
     XDG_DATA_HOME=/data
-RUN pip3 install jupyter pandas sklearn
+RUN pip3 install jupyter pandas sklearn keras
 COPY start-jupyter-notebook.sh /usr/local/bin/
 COPY etc/jupyter_notebook_config.py /etc/jupyter/jupyter_notebook_config.py
 CMD ["start-jupyter-notebook.sh"]
