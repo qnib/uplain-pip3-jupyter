@@ -10,7 +10,8 @@ if [[ "X${JUPYTER_API_TOKEN}" != "X" ]];then
   OPTS="${OPTS} --NotebookApp.token=${JUPYTER_API_TOKEN}"
 fi
 
-cd ${JUPYTERPORT_BASE_DIR}
+echo "> cd ${JUPYTER_NOTEBOOK_DIR}"
+cd ${JUPYTER_NOTEBOOK_DIR}
 echo "jupyter notebook --ip=0.0.0.0 --allow-root ${OPTS} \\"
 echo "                 --notebook-dir=${JUPYTER_NOTEBOOK_DIR} \\"
 echo "                 --NotebookApp.base_url=${JUPYTER_BASE_URL}"
