@@ -9,7 +9,8 @@ OPTS=""
 if [[ "X${JUPYTER_API_TOKEN}" != "X" ]];then
   OPTS="${OPTS} --NotebookApp.token=${JUPYTER_API_TOKEN}"
 fi
-XDG_RUNTIME_DIR=""
+
+XDG_RUNTIME_DIR="${JUPYTER_NOTEBOOK_DIR}"
 
 echo "> cd ${JUPYTER_NOTEBOOK_DIR}"
 cd ${JUPYTER_NOTEBOOK_DIR}
